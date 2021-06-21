@@ -1,0 +1,29 @@
+.nav.nav-pills li.active > a, .nav.nav-pills li > a:hover, .nav.nav-pills li > a:focus{
+  border-radius: 0px !important;
+   color: #fff !important;
+   background-color: #04c496 !important;
+}
+.nav > li > a {
+    position: relative !important;
+    display: block !important;
+    padding: 10px 15px !important;
+}
+body {
+
+    color: #333333 !important;
+    background-color: #333333 !important;
+}
+
+.nav-pills .nav-link.active,
+.show>.nav-pills .nav-link{
+  border-radius: 0px !important;
+   color: #fff !important;
+   background-color: #04c496 !important;
+}
+.color-bg{
+  background-color: #04c496 !important;
+   color: #fff !important;
+
+
+
+}
