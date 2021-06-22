@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TipoSinodalSeeder::class);
         $this->call(UsuarioMasterSeeder::class);
         $this->call(Tipo_OficioSeeder::class);
-
-
+        $this->call(Oficio_CamposSeeder::class);
+        
     }
 }
