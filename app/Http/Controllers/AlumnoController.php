@@ -175,10 +175,12 @@ class AlumnoController extends Controller
         $mensajes_rec = $this->verificar_mensajes();
         if (Auth::check()) {
             //return view('alumnos.index');
-
             return redirect()->guest('/alumnos');
+        }else{
+            return view('alumnos.login', compact('mensajes_rec'));
+
         }
-        return view('alumnos.login', compact('mensajes_rec'));
+        
     }
 
     public function registrar(Request $request)
