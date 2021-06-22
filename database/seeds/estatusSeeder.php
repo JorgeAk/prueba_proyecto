@@ -21,7 +21,7 @@ class estatusSeeder extends Seeder
             'nombre' => 'EN REVISIÓN DOCENCIA'
         ]);
         DB::table('estatus')->insert([
-            'nombre' => 'EN REVISIÓN DIVISION DE ESTUDIOS PROFESIONALES'
+            'nombre' => 'EN REVISIÓN COORDINACION DE TITULACIONES'
         ]);
         DB::table('estatus')->insert([
             'nombre' => 'ASIGNACION DE SINODALES'
@@ -63,6 +63,13 @@ class estatusSeeder extends Seeder
         ]);
         DB::table('estatus')->insert([
             'nombre' => 'GENERACION DE OFICIO'
+        ]);
+
+        DB::table('estatus')->insert([
+            'nombre' => 'CEREMONIA ASIGNADA'
+        ]);
+        DB::table('estatus')->insert([
+            'nombre' => 'PROYECTO LIBERADO'
         ]);
         
         
