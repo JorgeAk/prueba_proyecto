@@ -24,7 +24,8 @@ Route::get('/', function () {
 	return view('auth.login');
 });
 #Rutas publicas login
-Route::get('/login/alumno','AlumnoController@redirec', function () {
+Route::get('/login/alumno', function () {
+	return view('alumnos.login');
 })->name('/login/alumno');
 
 Route::get('/login/profesor', function () {
