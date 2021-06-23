@@ -23,24 +23,25 @@
               <p class="text-center">Bienvenido al Sistema de Gestión Escolar, por favor selecciona la opción de acuerdo a tus actividades.</p>
               <br>
               <ul class="nav nav-pills nav-center">
-                <li role="presentation" >
+                <li role="presentation">
                   <a href="{{ route('login') }}">Inicio</a>
                 </li>
-                <li role="presentation" >
-                  <a href="{{ route('/login/administrativo') }}">Personal del Instituto</a></li>
-                  <li role="presentation" >
-                    <a href="{{ route('/login/alumno') }}">Alumno</a>
-                  </li>
-                  <li role="presentation" class="active">
-                    <a href="{{ route('/login/profesor') }}">Profesor</a>
-                  </li>
-                </ul>
-                <br>
-                <div class="row">
+                <li role="presentation">
+                  <a href="{{ route('/login/administrativo') }}">Personal del Instituto</a>
+                </li>
+                <li role="presentation">
+                  <a href="{{ route('/login/alumno') }}">Alumno</a>
+                </li>
+                <li role="presentation" class="active">
+                  <a href="{{ route('/login/profesor') }}">Profesor</a>
+                </li>
+              </ul>
+              <br>
+              <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
                   <div class="form-group label-floating is-empty">
                     <label for="ncontrol" class="control-label">RFC</label>
-                    <input type="text" name="username" id="username" value="" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" required autocomplete="username" >
+                    <input type="text" name="username" id="username" value="" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" required autocomplete="username">
                     @error('username')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -57,18 +58,17 @@
                     @enderror
                   </div>
                 </div>
-
               </div>
-                <br>
-                <div class="panel-footer text-right">
-                  <button type="submit" class="btn btn-primary btn-raised btn-sm">
-                    <i class="fa fa-sign-in"></i> Acceder</button>
-                  </div>
-                </div>
+              <br>
+              <div class="panel-footer text-right">
+                <button type="submit" class="btn btn-primary btn-raised btn-sm">
+                  <i class="fa fa-sign-in"></i> Acceder</button>
               </div>
-            </form>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
-    @endsection
+  </div>
+</div>
+@endsection
