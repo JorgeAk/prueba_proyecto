@@ -212,6 +212,7 @@
                                                                     @endif
                                                                     @endforeach
                                                                 </label>
+                                                                <?php $of_name=""; ?>
                                                                 @foreach ($tipo_oficio as $t_of)
                                                                 @if ($t_of->id==$ofi->id_tipo_oficio)
                                                                 <?php $of_name = $t_of->nombre; ?>
