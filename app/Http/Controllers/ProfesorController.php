@@ -316,11 +316,13 @@ class ProfesorController extends Controller
         if(!empty($aceptar_proyecto)){
             $estatus_solicitud=7;
             Revisor::where('id_solicitud',"$solicitud")->where('id_profesor',"$verificar_id_revisor->id")->update(['id_estatus' => $estatus_solicitud,'updated_at' => $date]);
+            DB::table('chat_proyecto')->where('receptor',"$usr")->where('id_solicitud',"$solicitud")->update(['estatus'=>'2','updated_at' => $date]);
         }else{
             if(!empty($rechaza_proyecto)){
                 $estatus_solicitud=8;
                 $quitar_rev=0;
                 Revisor::where('id_solicitud',"$solicitud")->where('id_profesor',"$verificar_id_revisor->id")->update(['id_estatus' => $estatus_solicitud,'updated_at' => $date]);
+                DB::table('chat_proyecto')->where('receptor',"$usr")->where('id_solicitud',"$solicitud")->update(['estatus'=>'2','updated_at' => $date]);
             }
         }
         // verificar si es el ultimo profesor para cambiar el estatus de la solicitud contar cuantos son
@@ -333,6 +335,8 @@ class ProfesorController extends Controller
             $descripcion= "El proyecto fue aprobado";
             $fecha_actual= Carbon::now();
             $this->registrar_bitacora($usr,$solicitud,11,$descripcion,$fecha_actual);
+            DB::table('chat_proyecto')->where('id_solicitud',"$solicitud")->update(['estatus'=>'2','updated_at' => $date]);
+            
         }else{
             $v_estatus_sol_recha = Revisor::where('id_estatus','8')->where('id_solicitud',"$solicitud")->count();
             $suma= $v_estatus_sol_apro+$v_estatus_sol_recha;
@@ -344,9 +348,12 @@ class ProfesorController extends Controller
             $descripcion= "El proyecto fue rechazado / no cumple con los requisitos";
             $fecha_actual= Carbon::now();
             $this->registrar_bitacora($usr,$solicitud,12,$descripcion,$fecha_actual);
+            DB::table('chat_proyecto')->where('id_solicitud',"$solicitud")->update(['estatus'=>'2','updated_at' => $date]);
 
             }
         }
+
+        
 
         Session::flash('message','Todo Correcto ');
         	return view('profesores.index',compact('mensajes_rec','recibidos_ind'));

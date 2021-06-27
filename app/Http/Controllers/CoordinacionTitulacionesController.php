@@ -169,7 +169,7 @@ class CoordinacionTitulacionesController extends Controller
             $tip_of = 9;
             $tipo_solicitud = Solicitud::where('id', "$id_sol")->where('id_optitulacion', "4")->exists();
             if ($tipo_solicitud) {
-                $tip_of = 13;
+                $tip_of = 9;
             }
             //$this->adjuntar_oficio($oficio_asignacion_sinodales,$tip_of,$id_sol);
             if ($request->hasFile('oficio_sol_sinodales')) {
@@ -413,8 +413,8 @@ class CoordinacionTitulacionesController extends Controller
             $emisor  = auth()->user()->username;
             $correo  = auth()->user()->email;
             $asunto   = "Asignado para ser Sinodal";
-            $mensaje  = "Muy buenos dias profesor (a) se le informa que a sido seleccionado para ser sinodal del alumno, favor 
-    de aceptar o rechachar en la opcion de sinodales. att:Docencia";
+            $mensaje  = "Muy buenos dias profesor (a) se le informa que a sido seleccionado para ser sinodal y asistir a la " . $nombre . " el dia " . $fecha . " apartir de las " . $hora . "horas, favor 
+    de aceptar o rechachar participar como sinodal en la opcion de sinodales. att:Docencia";
             $sinodales = Sinodal::select('sinodales.id_profesor', 'profesores.correo')
                 ->join('profesores', 'profesores.id', '=', 'sinodales.id_profesor')
                 ->where('profesores.estatus', "1")
@@ -477,6 +477,7 @@ class CoordinacionTitulacionesController extends Controller
 
                 Session::flash('message', 'Documento Actualizado');
                 $documento = DB::table('ceremonias')->where('id', '=', "$id")->update($sqlArr);
+                
             }
         } else {
             Session::flash('message', 'Ceremonia NO  Actualizada');

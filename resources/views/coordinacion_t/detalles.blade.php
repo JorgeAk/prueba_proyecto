@@ -198,7 +198,7 @@
                                                                 {{$t_of->nombre}}
                                                                 @endif
                                                                 @endforeach</label>
-                                                            <a class="btn btn-app" href="{{ route('descargar_archivo', $ofi->url )}}" data-toggle="tooltip" data-placement="top" title="@foreach ($tipo_oficio as $t_of)
+                                                            <a class="btn btn-app" href="{{ route('descargar_archivo', $ofi->url )}}" download="oficio_{{$ofi->id_tipo_oficio}}{{$alum->n_control}}.pdf" data-toggle="tooltip" data-placement="top" title="@foreach ($tipo_oficio as $t_of)
                                                                     @if ($t_of->id==$ofi->id_tipo_oficio)
                                                                     {{$t_of->nombre}}   
                                                                     @endif

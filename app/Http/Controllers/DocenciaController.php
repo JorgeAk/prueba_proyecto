@@ -468,6 +468,7 @@ class DocenciaController extends Controller
         $primer_revisor  = $request->input('primer_revisor');
         $segundo_revisor = $request->input('segundo_revisor');
         $tercer_revisor  = $request->input('tercer_revisor');
+        $t_rev_cp = $tercer_revisor;
         $cambio_estado   = $request->input('cambio_estado_proyecto');
         $impresion_definitiva  = $request->input('impresion_definitiva');
         $concluye_tramite      = $request->input('concluye_tramite');
@@ -832,9 +833,9 @@ class DocenciaController extends Controller
                 de aceptar o rechachar en la opcion de revisores. att:Docencia";
                     $revisores = Revisor::select('revisores.id_profesor', 'profesores.correo')
                         ->join('profesores', 'profesores.id', '=', 'revisores.id_profesor')
-                        ->where('profesores.estatus', "1")
+                        ->where('profesores.estatus', 1)
                         ->get();
-                    //dd($revisores);
+                    
                     foreach ($revisores as $rev) {
                         if ($rev->id_profesor == $primer_revisor) {
                             $receptor = $rev->correo;
@@ -844,7 +845,7 @@ class DocenciaController extends Controller
                                 $receptor2 = $rev->correo;
                                 $this->notificar($emisor, $correo, $receptor2, $asunto, $mensaje);
                             } else {
-                                if ($rev->id_profesor == $tercer_revisor) {
+                                if ($rev->id_profesor == $t_rev_cp) {
                                     $receptor3 = $rev->correo;
                                     $this->notificar($emisor, $correo, $receptor3, $asunto, $mensaje);
                                 }
