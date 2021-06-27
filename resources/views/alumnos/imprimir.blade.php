@@ -32,8 +32,7 @@
 
 <body>
     @foreach ($alumno as $alum)
-    <div class="col-lg-12">
-        
+    <div class="col-lg-12">        
         <h5 style="text-align: center">SOLICITUD DE REGISTRO DE OPCIÓN DE TITULACIÓN INTEGRAL</h5>
         <p style="text-align: center">Intituto Tecnologico de Morelia</p>
         <div id="container">
@@ -44,18 +43,15 @@
                 @if ($alum->plan == $pl->id)
                 <p>Plan: {{$pl->nombre}}</p>
                 @endif
-                @endforeach
-                
+                @endforeach                
             </div>
-            <div id="center">
-             
+            <div id="center">             
             </div>
             <div id="right">
                 <img class="img-thumbnail img-circle " width="100" height="100" src="{{asset('/res/imagen/default.png') }}">
             </div>  
         </div>
-        <div align="center">
-            
+        <div align="center">            
         </div>
         <br><br>
         <br><br>

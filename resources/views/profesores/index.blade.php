@@ -7,7 +7,7 @@
   <div>
     <div class="col-lg-12">
       <h1 class="page-header">
-        Panel <small>Proyecto Docencia Profesores</small>
+        Panel <small>Proyecto Docencia </small>
       </h1>
       <ol class="breadcrumb">
         <li class="active">
@@ -30,13 +30,12 @@
       <p>Contenido</p>
     </div>
   </div>
-
 </div>
 <!-- /page content -->
 <!-- footer content -->
 <footer>
   <div class="pull-right">
-    Titulacion SGE  by <a href="">IT Morelia</a>
+    Titulacion SGE by <a href="">IT Morelia</a>
   </div>
   <div class="clearfix"></div>
 </footer>

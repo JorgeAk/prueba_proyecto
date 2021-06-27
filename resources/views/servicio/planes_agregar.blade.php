@@ -29,31 +29,31 @@
       @endif
       <div class="card-body">
         <div class="x_content">
-                    <br>
-                    <form id="demo-form2"  method="POST" action="{{ route('/servicio/planes/agregar/nuevo') }}" class="form-horizontal form-label-left" >
-                      @csrf
-                      <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nombre<span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="first-name" name="nombre"  required class="form-control ">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Año <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="last-name" name="anio" required class="form-control">
-                        </div>
-                      </div> 
-                      <div class="ln_solid"></div>
-                      <div class="item form-group">
-                        <div class="col-md-6 col-sm-6 offset-md-5">
-                          <button type="submit" class="btn btn-success">Agregar</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
+          <br>
+          <form id="demo-form2" method="POST" action="{{ route('/servicio/planes/agregar/nuevo') }}" class="form-horizontal form-label-left">
+            @csrf
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nombre<span class="required">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="text" id="first-name" name="nombre" required class="form-control ">
+              </div>
+            </div>
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Año <span class="required">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="text" id="last-name" name="anio" required class="form-control">
+              </div>
+            </div>
+            <div class="ln_solid"></div>
+            <div class="item form-group">
+              <div class="col-md-6 col-sm-6 offset-md-5">
+                <button type="submit" class="btn btn-success">Agregar</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -62,7 +62,7 @@
   <!-- footer content -->
   <footer>
     <div class="pull-right">
-      Titulacion SGE  by <a href="">IT Morelia</a>
+      Titulacion SGE by <a href="">IT Morelia</a>
     </div>
     <div class="clearfix"></div>
   </footer>

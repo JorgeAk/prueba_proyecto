@@ -11,14 +11,15 @@
       </h1>
       <ol class="breadcrumb">
         <li class="active">
-          <i class="fa fa-dashboard"></i> Alumnos/<STRONG>Solicitudes</STRONG>
+          <i class="fa fa-dashboard"></i> Docencia/Alumnos/<STRONG>Solicitudes</STRONG>
         </li>
       </ol>
     </div>
   </div>
   <div class="card">
-
-    <div class="card-header"><h4>Lista de profesores asignados como sinodales</h4></div>
+    <div class="card-header">
+      <h4>Lista de profesores asignados como sinodales</h4>
+    </div>
     @if(Session::has('message'))
     <div class="alert alert-success alert-dismissible" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -51,13 +52,12 @@
                   @foreach ($sinodales as $sino)
                   <tr class="centrar">
                     @foreach ($profesores as $profe)
-                        @if ($sino->id_profesor == $profe->id)
-                        <td>{{$profe->rfc}}</td>
-                        <td>{{$profe->p_nombre}} {{$profe->s_nombre}}</td>
-                        <td>{{$profe->a_paterno }}</td>
-                        <td>{{$profe->a_materno }}</td>
-                        
-                        @endif
+                    @if ($sino->id_profesor == $profe->id)
+                    <td>{{$profe->rfc}}</td>
+                    <td>{{$profe->p_nombre}} {{$profe->s_nombre}}</td>
+                    <td>{{$profe->a_paterno }}</td>
+                    <td>{{$profe->a_materno }}</td>
+                    @endif
                     @endforeach
                     @if ($sino->comentario == "")
                     <td></td>
@@ -76,8 +76,6 @@
                     @if($sino->id_tipo ==4)
                     <td>Vocal Suplente</td>
                     @endif
-
-                    
                     @foreach ($alumno as $alum)
                     @if ($sino->id_solicitud == $alum->id)
                     <td>{{$alum->n_control}}</td>
@@ -85,20 +83,18 @@
                     @endforeach
                     @foreach ($estatus as $est)
                     @if ($sino->id_estatus == $est->id)
-                    <td>{{$est->nombre}}</td>  
-                    @endif 
+                    <td>{{$est->nombre}}</td>
+                    @endif
                     @endforeach
                     @foreach ($profesores as $profe)
-                        @if ($sino->id_profesor == $profe->id)
-                        <td><a class="btn btn-sm btn-default fa fa-envelope-square fa-3x" href="mailto: {{$profe->correo}}"></a></td>
-                        
-                        @endif
+                    @if ($sino->id_profesor == $profe->id)
+                    <td><a class="btn btn-sm btn-default fa fa-envelope-square fa-3x" href="mailto: {{$profe->correo}}"></a></td>
+                    @endif
                     @endforeach
                   </tr>
                   @endforeach
                 </tbody>
               </table>
-              
             </div>
           </div>
         </div>
