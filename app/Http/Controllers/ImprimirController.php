@@ -27,8 +27,9 @@ class ImprimirController extends Controller
         $planes          = Plan::all();
         $op_titulaciones = Optitulacion::all();
         $profesores      = Profesor::all();
-        $sinodales = array();
-        $revisores = array();
+        $mi_id           = Solicitud::where('p_correo',"$usr")->first('id');
+        $sinodales       = Sinodal::where('id_solicitud',"$mi_id->id");
+        $revisores       = Revisor::where('id_solicitud',"$mi_id->id");
         $carreras = Carrera::all();
 
         foreach ($alumno  as $sol) {
@@ -53,19 +54,13 @@ class ImprimirController extends Controller
         $planes = Plan::all();
         $op_titulaciones = Optitulacion::all();
         $profesores      = Profesor::all();
-        $sinodales = array();
-        $revisores = array();
+        $mi_id           = Solicitud::where('p_correo',"$usr")->first('id');
+        $sinodales       = Sinodal::where('id_solicitud',"$mi_id->id");
+        $revisores       = Revisor::where('id_solicitud',"$mi_id->id");
         $carreras = Carrera::all();
 
-        foreach ($alumno  as $sol) {
-            if ($sol->presidente != 0 and $sol->secretario != 0 and $sol->v_propietario != 0 and $sol->v_suplente != 0) {
-                $sinodales = Profesor::all();
-            } else {
-                if ($sol->primer_revisor != 0 and $sol->segundo_revisor != 0 and $sol->tercer_revisor != 0 and $sol->cuarto_revisor != 0) {
-                    $revisores = Profesor::all();
-                }
-            }
-        }
+        //dd($revisores);
+
         $pdf = \PDF::loadView('alumnos.imprimir',compact('alumno','date','planes','op_titulaciones','profesores','sinodales','revisores','carreras'));
         return $pdf->stream('result.pdf');
     }

@@ -198,27 +198,11 @@
         <tbody>
             <tr>
                 @foreach ($sinodales as $sin)
-                @if ($sin->id==$alum->presidente)
-                <td>{{$sin->p_nombre}}</td>
+                @foreach ($profesores as $prof)
+                @if($sin->id_profesor==$prof->id)
+                <td>{{$prof->p_nombre}}</td>
                 @endif
                 @endforeach
-
-                @foreach ($sinodales as $sin)
-                @if($sin->id==$alum->secretario)
-                <td>{{$sin->p_nombre}}</td>
-                @endif
-                @endforeach
-
-                @foreach ($sinodales as $sin)
-                @if($sin->id==$alum->v_propietario)
-                <td>{{$sin->p_nombre}}</td>
-                @endif
-                @endforeach
-
-                @foreach ($sinodales as $sin)
-                @if( $sin->id==$alum->v_suplente)
-                <td>{{$sin->p_nombre}}</td>
-                @endif 
                 @endforeach
             </tr>
             
