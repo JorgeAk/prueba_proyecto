@@ -11,16 +11,16 @@ class TipoSinodalSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tipo_revisor')->insert([
+        DB::table('tipo_sinodal')->insert([
             'nombre' => 'PRESIDENTE'
         ]);
-        DB::table('tipo_revisor')->insert([
+        DB::table('tipo_sinodal')->insert([
             'nombre' => 'SECRETARIO'
         ]);
-        DB::table('tipo_revisor')->insert([
+        DB::table('tipo_sinodal')->insert([
             'nombre' => 'VOCAL REVISOR'
         ]);
-        DB::table('tipo_revisor')->insert([
+        DB::table('tipo_sinodal')->insert([
             'nombre' => 'VOCAL SUPLENTE'
         ]);
     }
