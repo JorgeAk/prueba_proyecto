@@ -121,7 +121,7 @@ class ProfesorController extends Controller
         ->distinct()
         ->orderBy('solicitudes.created_at','DESC')
         ->get();
-        dd($tipoS);
+        //dd($tipoS);
 
 
         $mensajes_rec = $this->verificar_mensajes();
