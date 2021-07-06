@@ -449,7 +449,7 @@
                                             </p>
                                             @endif
                                             @if ($sino->id_tipo== 2 and $sino->id_profesor == $prof->id)
-                                            <p>Presidente: {{ $prof->p_nombre }} {{ $prof->s_nombre }} {{ $prof->a_paterno}} {{ $prof->a_materno }} <br>
+                                            <p>Secretario: {{ $prof->p_nombre }} {{ $prof->s_nombre }} {{ $prof->a_paterno}} {{ $prof->a_materno }} <br>
                                                 @foreach ($estatus2 as $est)
                                                 @if ($sino->id_estatus==$est->id)
                                                 <small class="text-danger"> ({{$est->nombre}})</small>
@@ -458,7 +458,7 @@
                                             </p>
                                             @endif
                                             @if ($sino->id_tipo== 3 and $sino->id_profesor == $prof->id)
-                                            <p>Presidente: {{ $prof->p_nombre }} {{ $prof->s_nombre }} {{ $prof->a_paterno}} {{ $prof->a_materno }} <br>
+                                            <p>Vocal: {{ $prof->p_nombre }} {{ $prof->s_nombre }} {{ $prof->a_paterno}} {{ $prof->a_materno }} <br>
                                                 @foreach ($estatus2 as $est)
                                                 @if ($sino->id_estatus==$est->id)
                                                 <small class="text-danger"> ({{$est->nombre}})</small>
@@ -467,7 +467,7 @@
                                             </p>
                                             @endif
                                             @if ($sino->id_tipo== 4 and $sino->id_profesor == $prof->id)
-                                            <p>Presidente: {{ $prof->p_nombre }} {{ $prof->s_nombre }} {{ $prof->a_paterno}} {{ $prof->a_materno }} <br>
+                                            <p>Vocal suplente: {{ $prof->p_nombre }} {{ $prof->s_nombre }} {{ $prof->a_paterno}} {{ $prof->a_materno }} <br>
                                                 @foreach ($estatus2 as $est)
                                                 @if ($sino->id_estatus==$est->id)
                                                 <small class="text-danger"> ({{$est->nombre}})</small>
