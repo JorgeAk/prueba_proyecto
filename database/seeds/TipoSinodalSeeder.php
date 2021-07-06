@@ -11,6 +11,8 @@ class TipoSinodalSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('tipo_sinodal')->truncate();
+        
         DB::table('tipo_sinodal')->insert([
             'nombre' => 'PRESIDENTE'
         ]);
